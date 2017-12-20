@@ -5,8 +5,6 @@ import numpy
 frame = cv2.imread('dove.png')
 
 def hsv_shift():
-    frame = cv2.imread('dove.png')
-
     hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV);
     
     int_h = cv2.getTrackbarPos('Hue', 'frame')
@@ -53,11 +51,9 @@ def hsv_shift():
 
 	    hsv_frame[j, i, 2] = v_plus_shift
 
+    adjusted_frame = cv2.cvtColor(hsv_frame, cv2.COLOR_HSV2BGR);
 
-
-    frame = cv2.cvtColor(hsv_frame, cv2.COLOR_HSV2BGR);
-
-    cv2.imshow('frame', frame);
+    cv2.imshow('frame', adjusted_frame);
 
     
 
